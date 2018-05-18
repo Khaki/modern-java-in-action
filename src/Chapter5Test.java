@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
@@ -123,6 +124,13 @@ class Chapter5Test {
         System.out.println();
 
         IntStream.range(1, 10).forEach(System.out::println);
+        System.out.println();
+
+
+        // Quiz5_4 Fibonacci
+        Stream.iterate(new int[]{0, 1}, ints -> new int[]{ints[1], ints[0] + ints[1]})
+                .limit(20)
+                .forEach(t -> System.out.println("(" + t[0] + "," + t[1] + ")"));
     }
 }
 
